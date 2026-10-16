@@ -318,7 +318,7 @@ d2c53052ae21   trabalho05-sd-consumidor-suporte      Up             -           
 
 ## 📹 Link da Demonstração em Vídeo
 
-* **Vídeo Demonstrativo (YouTube / Google Drive)**: `[https://drive.google.com/file/d/1ev-PUBp-AF7VcaVYQ8iOKf5QgIyVkJA4/view?usp=sharing]`
+* **Vídeo Demonstrativo (Google Drive)**: `[https://drive.google.com/file/d/1ev-PUBp-AF7VcaVYQ8iOKf5QgIyVkJA4/view?usp=sharing]`
 
 
 
