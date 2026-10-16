@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-broker
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+    networks:
+      - rabbitmq_net
+
+  gerador:
+    build: 
+      context: ./gerador
+    container_name: gerador-mensagens
+    depends_on:
+      - rabbitmq
+    networks:
+      - rabbitmq_net
+
+  consumidor-sentimento:
+    build:
+      context: ./consumidor-sentimento
+    container_name: consumidor-sentimento
+    depends_on:
+      - rabbitmq
+    networks:
+      - rabbitmq_net
+
+  consumidor-suporte:
+    build:
+      context: ./consumidor-suporte
+    container_name: consumidor-suporte
+    depends_on:
+      - rabbitmq
+    networks:
+      - rabbitmq_net
+
+networks:
+  rabbitmq_net:
+    driver: bridge
